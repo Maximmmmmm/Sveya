@@ -1,0 +1,119 @@
+{% load static %}
+<!-- static loading -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<!-- css loading -->
+	<link rel="stylesheet" href="{% static 'Main_page/home_css/home.css' %}">
+	<link rel="stylesheet" href="{% static 'Main_page/home_css/header.css' %}">
+	<link rel="stylesheet" href="{% static 'Main_page/home_css/infobox.css' %}">
+	<link rel="stylesheet" href="{% static 'Main_page/home_css/cardbox.css' %}">
+	<link rel="stylesheet" href="{% static 'Main_page/home_css/conbox.css' %}">
+	<link rel="stylesheet" href="{% static 'Main_page/home_css/basement.css' %}">
+	<script defer src="{% static 'Main_page/home_js/menu.js' %}"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<header class="header">
+			<div class="header__container">
+				<div class="left">
+					<div class="logo_shveya"><img src="{% static 'Main_page/images/logo.png' %}" alt="logo"></div>
+				</div>
+				<button class="icon-menu"><span></span></button>
+				<div class="right _menu">
+					<nav class="menu">
+						<a>Новини</a>
+						<a href="{% url 'show_home' %}" class="{% if request.path == '/' %}active{% endif %}">Навчальний
+							центр</a>
+						<a>Донат</a>
+					</nav>
+					<div class="menulang">
+						<button>EN</button>
+						<div>|</div>
+						<button>UK</button>
+					</div>
+				</div>
+			</div>
+
+		</header>
+
+		<div class="infobox">
+			<div class="infobox__container">
+				<div class="left">
+					<div class="icon_shveya"><img src="{% static 'Main_page/images/iconshveya.png' %}" alt="iconshveya">
+					</div>
+				</div>
+				<div class="right">
+					<h1>Швейна рота</h1>
+					<h2>Волонтерський проєкт, який займається пошиттям
+						адаптивного одягу для поранених
+						захисників, захисниць України, а також цивільних,
+						які постраждали внаслідок російської агресії. Наші
+						зусилля спрямовані на забезпечення поранених якісним,
+						комфортним і функціональним одягом, який допомагає
+						зберегти гідність і полегшити реабілітацію на всіх
+						етапах від евакуації до одужання.</h1>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="cardbox">
+			<div class="card">
+				<div class="top">
+					<div class="icon_card"><img src="{% static 'Main_page/icons_cards/coin.png' %}" alt="coin"></div>
+					<h1>За увесь час</h1>
+				</div>
+				<div class="bot">
+					<h1>36723213213 грн</h1>
+				</div>
+			</div>
+			<div class="card">
+				<div class="top">
+					<div class="icon_card"><img src="{% static 'Main_page/icons_cards/money.png' %}" alt="coin"></div>
+					<h1>Найбільший донат</h1>
+				</div>
+				<div class="bot">
+					<h1>20000 грн</h1>
+				</div>
+			</div>
+			<div class="card">
+				<div class="top">
+					<div class="icon_card"><img src="{% static 'Main_page/icons_cards/delta.png' %}" alt="coin"></div>
+					<h1>Середня пожертва</h1>
+				</div>
+				<div class="bot">
+					<h1>2000 грн</h1>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="conbox">
+			<div class="left">
+
+			</div>
+			<div class="column"></div>
+			<div class="right">
+
+
+			</div>
+		</div>
+
+
+
+
+	</div>
+
+
+
+</body>
+
+</html>

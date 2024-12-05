@@ -1,0 +1,149 @@
+.header {
+	position: absolute;
+	overflow: hidden;
+	background: #2e2e35;
+	height: 100px; 
+	width: 100%; 
+	position: relative;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+.header__container {
+	display: flex;
+	height: 100%;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1100px;
+	padding: 0px 15px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.header .left {
+	height: 100%;
+	display: flex;
+	align-items: center; 
+	justify-content: center;
+
+}
+
+.header .right {
+	display: flex;
+}
+
+.left .logo_shveya img {
+	max-width: 100%;
+}
+
+.logo_shveya {
+	max-width: 196px;
+}
+
+.right .menu {
+	background-color: #2e2e35;
+	display: flex;
+	gap: 30px;
+}
+
+.right .menulang {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin: 0px 0px 0px 30px;
+}
+
+.menulang .div {
+	color: #E8DCD0;
+}
+
+.menu a, button {
+	position: relative;
+	font-size: 24px; 
+	font-family: 'intro', sans-serif; 
+	color: #E8DCD0;
+	position: relative;  
+	text-decoration: none;
+	display: flex;
+	flex-direction: column; 
+	align-items: center; 
+	justify-content: center; 
+	height: 100%; 
+	transition: all 0.3s ease;
+	user-select: none;
+}
+
+.menu a::after {
+	content: '';
+	position: absolute;
+	bottom: 13px;  
+	left: 50%;
+	transform: translateX(-50%);
+	width: 15px;  
+	height: 15px; 
+	background-color: #E8DCD0;  
+	border-radius: 50%;  
+	opacity: 0;  
+	transition: opacity 0.3s ease;  
+}
+
+.menu a.active::after {
+	opacity: 1;  
+}
+
+.menu a:hover {
+	color: #552bf0; 
+}
+
+.menu a.active:hover {
+	color: #E8DCD0; 
+}
+
+.icon-menu {
+	display: none;
+	position: relative;
+	height: 30px;
+}
+
+.icon-menu span {
+	display: block;
+	width: 40px;
+	height: 4px;
+	background-color: #E8DCD0;
+}
+
+.icon-menu::after, .icon-menu::before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 40px;
+	height: 4px;
+	background-color: #E8DCD0;
+	left: 0;
+}
+
+.icon-menu::after {
+	bottom: 0;
+}
+
+.icon-menu::before {
+	top: 0;
+}
+
+
+@media (max-width: 992px) {
+	.menu a, button {
+		font-size: 18px;
+	}
+	.logo_shveya {
+		max-width: 146px;
+	}
+}
+
+
+
+@media (max-width: 748px) {
+	.icon-menu {
+		display: block;
+	}
+}

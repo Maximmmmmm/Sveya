@@ -1,0 +1,56 @@
+.infobox {
+  background: #E8DCD0;
+  width: 100%;
+  display: flex; /* Делает блок контейнером flex */
+}
+
+.infobox__container {
+  max-width: 1100px;
+  padding: 80px 15px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+}
+
+.infobox .left {
+  background-color: #E8DCD0;
+  min-width: 356px;
+}
+
+.infobox .right {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right h1 {
+  font-size: 28px; /* Относительный размер шрифта */
+  color: #2e2e35; 
+  margin-top: 3%;
+  margin-right: 4%;
+  font-family: 'intro', sans-serif; 
+  text-align: center; /* Дополнительное центрирование текста */
+}
+
+.right h2 {
+  color: #2e2e35; 
+  font-family: 'anonymousprobold', sans-serif; 
+  font-size: 24px; 
+  line-height: 1.2; 
+  text-align: justify;
+  margin-top: 2%;
+}
+
+.icon_shveya img {
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .infobox__container {
+    flex-direction: column-reverse;
+    gap: 30px;
+    padding: 40px 15px;
+  }
+}
