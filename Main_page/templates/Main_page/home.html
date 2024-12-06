@@ -13,7 +13,9 @@
 	<link rel="stylesheet" href="{% static 'Main_page/home_css/cardbox.css' %}">
 	<link rel="stylesheet" href="{% static 'Main_page/home_css/conbox.css' %}">
 	<link rel="stylesheet" href="{% static 'Main_page/home_css/basement.css' %}">
+	<link rel="stylesheet" href="{% static 'Main_page/home_css/map.css' %}">
 	<script defer src="{% static 'Main_page/home_js/menu.js' %}"></script>
+	<script defer src="{% static 'Main_page/home_js/map.js' %}"></script>
 </head>
 
 <body>
@@ -63,7 +65,8 @@
 
 		</div>
 		<div class="order">
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLScwlcFX3jqmOrJ3oXMrcNJJS3-LgfYy5fjMlXSlSmpU6HaLaw/viewform" class="order__link">Замовити адаптивний одяг</a>
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLScwlcFX3jqmOrJ3oXMrcNJJS3-LgfYy5fjMlXSlSmpU6HaLaw/viewform"
+				class="order__link">Замовити адаптивний одяг</a>
 		</div>
 		<div class="cardbox">
 			<div class="cardbox__container">
@@ -80,21 +83,21 @@
 					</div>
 				</div>
 				{% endfor %}
-			</div> 
-		</div> 
+			</div>
+		</div>
 
 		<div class="conboxcontainer">
 			<div class="conbox">
 				<a href="https://www.google.com" class="left">
 					<h1>Матеріали для пошиття</h1>
-				</a>		
+				</a>
 				<div class="column"></div>
 				<a href="https://www.google.com" class="right">
 					<h1>Інструкції для пошиття</h1>
 				</a>
 			</div>
 		</div>
-		
+
 		<div class="cardbox">
 			<div class="cardbox__container">
 				<!-- Карточка 1 -->
@@ -109,7 +112,7 @@
 						<p>100 000</p>
 					</div>
 				</div>
-				
+
 				<!-- Карточка 2 -->
 				<div class="card">
 					<div class="card__top">
@@ -122,7 +125,7 @@
 						<p> 700+</p>
 					</div>
 				</div>
-				
+
 				<!-- Карточка 3 -->
 				<div class="card">
 					<div class="card__top">
@@ -135,23 +138,102 @@
 						<p>100+</p>
 					</div>
 				</div>
-			</div> 
-		</div> 
+			</div>
+		</div>
 
 		<div class="infobox">
-				<div class="infobox__container1">
-					<h1>Масштаб діяльності:</h1>
-					<h2>
-							   Ми діємо як в Україні, так і за кордоном, постачаючи адаптивний одяг у
-							реабілітаційні центри Швеції, Данії, Польщі, Німеччини тощо.<br>
-							   Залучаємо українців за кордоном до волонтерської діяльності, що
-							допомагає підтримувати зв’язок із батьківщиною.<br>
-							   Першими створили унікальні моделі: адаптивні худі, жіночу адаптивну
-							білизну та інший одяг, який враховує потреби поранених.
-					</h2>
-				</div>
+			<div class="infobox__container1">
+				<h1>Масштаб діяльності:</h1>
+				<h2>
+					Ми діємо як в Україні, так і за кордоном, постачаючи адаптивний одяг у
+					реабілітаційні центри Швеції, Данії, Польщі, Німеччини тощо.<br>
+					Залучаємо українців за кордоном до волонтерської діяльності, що
+					допомагає підтримувати зв’язок із батьківщиною.<br>
+					Першими створили унікальні моделі: адаптивні худі, жіночу адаптивну
+					білизну та інший одяг, який враховує потреби поранених.
+				</h2>
+			</div>
 		</div>
-		
+
+		<div class="cardbox">
+			<div class="cardbox__container">
+				<!-- Карточка 1 -->
+				<div class="cardColab">
+
+				</div>
+
+				<!-- Карточка 2 -->
+				<div class="cardColab">
+
+				</div>
+
+				<!-- Карточка 3 -->
+				<div class="cardColab">
+
+				</div>
+			</div>
+		</div>
+
+		<div class="cardbox1">
+			<div class="cardbox__container">
+				<!-- Карточка 1 -->
+				<div class="cardColab">
+
+				</div>
+
+				<!-- Карточка 2 -->
+				<div class="cardColab">
+
+				</div>
+
+				<!-- Карточка 3 -->
+				<div class="cardColab">
+
+				</div>
+			</div>
+		</div>
+
+		<div class="mapcontainer">
+			<div class="mapbox">
+				<!-- Левый блок с картой -->
+				<div class="left">
+					<iframe id="mapIframe"
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509425!2d-122.41941548467836!3d37.77492977975971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064a043bf3f%3A0x6e59c40cde44e5e0!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sus!4v1601840347235!5m2!1sen!2sus"
+						loading="lazy">
+					</iframe>
+				</div>
+
+				<!-- Правый блок -->
+				<div class="right">
+					<button class="button"
+						onclick="changeMapURL('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509425!2d-122.41941548467836!3d37.77492977975971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064a043bf3f%3A0x6e59c40cde44e5e0!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sus!4v1601840347235!5m2!1sen!2sus')">Кнопка
+						1</button>
+					<button class="button"
+						onclick="changeMapURL('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509425!2d-73.935242!3d40.730610!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d8c6b3d2d9a0d7%3A0x3c1f104327ed23e1!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sus!4v1601840347235!5m2!1sen!2sus')">Кнопка
+						2</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="cardbox">
+			<div class="cardbox__container">
+				<!-- Карточка 1 -->
+				<div class="cardColab">
+
+				</div>
+
+				<!-- Карточка 2 -->
+				<div class="cardColab">
+
+				</div>
+
+				<!-- Карточка 3 -->
+				<div class="cardColab">
+
+				</div>
+			</div>
+		</div>
+
 	</div>
 </body>
 
