@@ -14,8 +14,12 @@
 	<link rel="stylesheet" href="{% static 'Main_page/home_css/conbox.css' %}">
 	<link rel="stylesheet" href="{% static 'Main_page/home_css/basement.css' %}">
 	<link rel="stylesheet" href="{% static 'Main_page/home_css/map.css' %}">
+	<link rel="stylesheet" href="{% static 'Main_page/home_css/media.css' %}">
+	<link rel="stylesheet" href="{% static 'Main_page/home_css/partners.css' %}">
+	<link rel="stylesheet" href="{% static 'Main_page/home_css/popup.css' %}">
 	<script defer src="{% static 'Main_page/home_js/menu.js' %}"></script>
 	<script defer src="{% static 'Main_page/home_js/map.js' %}"></script>
+	<script defer src="{% static 'Main_page/home_js/sub.js' %}"></script>
 </head>
 
 <body>
@@ -24,15 +28,15 @@
 		<header class="header">
 			<div class="header__container">
 				<div class="left">
-					<div class="logo_shveya"><img src="{% static 'Main_page/images/logo.png' %}" alt="logo"></div>
+					<a href="{% url 'show_home' %}">
+						<div class="logo_shveya"><img src="{% static 'Main_page/images/logo.png' %}" alt="logo"></div>
+					</a>
 				</div>
 				<button class="icon-menu"><span></span></button>
 				<div class="right _menu">
 					<nav class="menu">
-						<a href="">Новини</a>
-						<a href="{% url 'show_home' %}" class="{% if request.path == '/' %}active{% endif %}">Навчальний
+						<a href="{% url 'center' %}" class="{% if request.path == '/' %}active{% endif %}">Навчальний
 							центр</a>
-						<a href="">Донат</a>
 					</nav>
 					<div class="menulang">
 						<button>EN</button>
@@ -65,7 +69,8 @@
 
 		</div>
 		<div class="order">
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLScwlcFX3jqmOrJ3oXMrcNJJS3-LgfYy5fjMlXSlSmpU6HaLaw/viewform"
+			<a target="_blank"
+				href="https://docs.google.com/forms/d/e/1FAIpQLScwlcFX3jqmOrJ3oXMrcNJJS3-LgfYy5fjMlXSlSmpU6HaLaw/viewform"
 				class="order__link">Замовити адаптивний одяг</a>
 		</div>
 		<div class="cardbox">
@@ -88,152 +93,89 @@
 
 		<div class="conboxcontainer">
 			<div class="conbox">
-				<a href="https://www.google.com" class="left">
-					<h1>Матеріали для пошиття</h1>
+				<a href="{% url 'center' %}" class="left">
+					<h1>ДОєднатися до пошиття</h1>
 				</a>
 				<div class="column"></div>
-				<a href="https://www.google.com" class="right">
-					<h1>Інструкції для пошиття</h1>
+				<div class="column"></div>
+				<button id="openBtn" class="right">Підтримуй нас<br> Донатом</button>
+				<div id="popup" class="popup">
+					<div class="popup-content">
+						<span id="closeBtn" class="paypal">&times;</span>
+						<div class="paypal _paypal">
+							<div class="paypalimg">
+								<img src="{% static 'Main_page/images/paypal.jpg' %}" alt="PayPal logo">
+							</div>
+							marishka.polo@gmail.com
+						</div>
+						<a href="https://send.monobank.ua/jar/5VV7zhDJGYhttps://send.monobank.ua/jar/5VV7zhDJGY"
+							class="paypal _paypal">
+							<div class="paypalimg">
+								<img src="{% static 'Main_page/images/mono.jpg' %}" alt="PayPal logo">
+							</div>
+							5375 4112 0381 7304
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="media-links">
+		<div class="media-links__container">
+			<h2 class="media-links__title">Наші соцмережі</h2>
+			<div class="media-links__block">
+				{% for link in links %}
+				<a href="{{ link.link }}" class="media-links__link">
+					<div class="media-links__image"><img src="{{ link.img.url }}" alt=""></div>
+					{{ link.name }}
 				</a>
+				{% endfor %}
 			</div>
 		</div>
-
-		<div class="cardbox">
-			<div class="cardbox__container">
-				<!-- Карточка 1 -->
-				<div class="card">
-					<div class="card__top1">
-						<div class="iconshveya">
-							<img src="{% static 'Main_page/icons_cards/short1.png' %}" alt="iconshveya">
-						</div>
-						<h1>одиниць адаптивного одягу</h1>
-					</div>
-					<div class="card__bottom">
-						<p>100 000</p>
-					</div>
-				</div>
-
-				<!-- Карточка 2 -->
-				<div class="card">
-					<div class="card__top">
-						<div class="iconshveya">
-							<img src="{% static 'Main_page/icons_cards/Score.png' %}" alt="iconshveya">
-						</div>
-						<h1>Волонтерів</h1>
-					</div>
-					<div class="card__bottom">
-						<p> 700+</p>
-					</div>
-				</div>
-
-				<!-- Карточка 3 -->
-				<div class="card">
-					<div class="card__top">
-						<div class="iconshveya">
-							<img src="{% static 'Main_page/icons_cards/expert1.png' %}" alt="iconshveya">
-						</div>
-						<h1>Лекала та майстер-класи</h1>
-					</div>
-					<div class="card__bottom">
-						<p>100+</p>
-					</div>
-				</div>
+	</div>
+	<div class="infobox">
+		<div class="infobox__container1">
+			<h1>Масштаб діяльності:</h1>
+			<h2>
+				Ми діємо як в Україні, так і за кордоном, постачаючи адаптивний одяг у
+				реабілітаційні центри Швеції, Данії, Польщі, Німеччини тощо.<br>
+				Залучаємо українців за кордоном до волонтерської діяльності, що
+				допомагає підтримувати зв’язок із батьківщиною.<br>
+				Першими створили унікальні моделі: адаптивні худі, жіночу адаптивну
+				білизну та інший одяг, який враховує потреби поранених.
+			</h2>
+		</div>
+	</div>
+	<div class="partners">
+		<div class="partners__container">
+			<h1 class="partners__title">Наші партнери</h1>
+			<div class="partners__box">
+				{% for partner in partners %}
+				<div class="partners__partner"><img src="{{ partner.img.url }}" alt=""></div>
+				{% endfor %}
 			</div>
 		</div>
+	</div>
 
-		<div class="infobox">
-			<div class="infobox__container1">
-				<h1>Масштаб діяльності:</h1>
-				<h2>
-					Ми діємо як в Україні, так і за кордоном, постачаючи адаптивний одяг у
-					реабілітаційні центри Швеції, Данії, Польщі, Німеччини тощо.<br>
-					Залучаємо українців за кордоном до волонтерської діяльності, що
-					допомагає підтримувати зв’язок із батьківщиною.<br>
-					Першими створили унікальні моделі: адаптивні худі, жіночу адаптивну
-					білизну та інший одяг, який враховує потреби поранених.
-				</h2>
+	<div class="mapcontainer">
+		<div class="mapbox">
+			<!-- Левый блок с картой -->
+			<div class="left">
+				<iframe id="mapIframe"
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509425!2d-122.41941548467836!3d37.77492977975971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064a043bf3f%3A0x6e59c40cde44e5e0!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sus!4v1601840347235!5m2!1sen!2sus"
+					loading="lazy">
+				</iframe>
+			</div>
+
+			<!-- Правый блок -->
+			<div class="right">
+				{% for mapsLink in mapsLinks %}
+				<button class="button"
+					onclick="changeMapURL('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82352.68481656504!2d23.929834766914727!3d49.83265984405233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add7c09109a57:0x4223c517012378e2!2z0JvRjNCy0L7Qsiwg0JvRjNCy0L7QstGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!5e0!3m2!1sru!2sua!4v1733485105656!5m2!1sru!2sua')">{{ mapsLink.name }}</button>
+				{% endfor %}
 			</div>
 		</div>
-
-		<div class="cardbox">
-			<div class="cardbox__container">
-				<!-- Карточка 1 -->
-				<div class="cardColab">
-
-				</div>
-
-				<!-- Карточка 2 -->
-				<div class="cardColab">
-
-				</div>
-
-				<!-- Карточка 3 -->
-				<div class="cardColab">
-
-				</div>
-			</div>
-		</div>
-
-		<div class="cardbox1">
-			<div class="cardbox__container">
-				<!-- Карточка 1 -->
-				<div class="cardColab">
-
-				</div>
-
-				<!-- Карточка 2 -->
-				<div class="cardColab">
-
-				</div>
-
-				<!-- Карточка 3 -->
-				<div class="cardColab">
-
-				</div>
-			</div>
-		</div>
-
-		<div class="mapcontainer">
-			<div class="mapbox">
-				<!-- Левый блок с картой -->
-				<div class="left">
-					<iframe id="mapIframe"
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509425!2d-122.41941548467836!3d37.77492977975971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064a043bf3f%3A0x6e59c40cde44e5e0!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sus!4v1601840347235!5m2!1sen!2sus"
-						loading="lazy">
-					</iframe>
-				</div>
-
-				<!-- Правый блок -->
-				<div class="right">
-					<button class="button"
-						onclick="changeMapURL('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509425!2d-122.41941548467836!3d37.77492977975971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064a043bf3f%3A0x6e59c40cde44e5e0!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sus!4v1601840347235!5m2!1sen!2sus')">Кнопка
-						1</button>
-					<button class="button"
-						onclick="changeMapURL('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509425!2d-73.935242!3d40.730610!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d8c6b3d2d9a0d7%3A0x3c1f104327ed23e1!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sus!4v1601840347235!5m2!1sen!2sus')">Кнопка
-						2</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="cardbox">
-			<div class="cardbox__container">
-				<!-- Карточка 1 -->
-				<div class="cardColab">
-
-				</div>
-
-				<!-- Карточка 2 -->
-				<div class="cardColab">
-
-				</div>
-
-				<!-- Карточка 3 -->
-				<div class="cardColab">
-
-				</div>
-			</div>
-		</div>
-
+	</div>
 	</div>
 </body>
 

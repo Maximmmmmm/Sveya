@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Майстер-класи</title>
+
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="{% static 'Main_page/info_css/info.css' %}">
+    <link rel="stylesheet" href="{% static 'Main_page/home_css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'Main_page/info_css/infobox.css' %}">
+    <link rel="stylesheet" href="{% static 'Main_page/home_css/cardbox.css' %}">
+    <link rel="stylesheet" href="{% static 'Main_page/home_css/conbox.css' %}">
+    <link rel="stylesheet" href="{% static 'Main_page/home_css/basement.css' %}">
+
+    <!-- Подключение JS -->
+    <script defer src="{% static 'Main_page/home_js/menu.js' %}"></script>
+</head>
+
+<body>
+    <!-- Верхний блок -->
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="header__container">
+                <div class="left">
+                    <a href="{% url 'show_home' %}">
+                        <div class="logo_shveya"><img src="{% static 'Main_page/images/logo.png' %}" alt="logo"></div>
+                    </a>
+                </div>
+                <button class="icon-menu"><span></span></button>
+                <div class="right _menu">
+                    <nav class="menu">
+                        <a href="{% url 'center' %}" class="{% if request.path == '/' %}active{% endif %}">Навчальний
+                            центр</a>
+                    </nav>
+                    <div class="menulang">
+                        <button>EN</button>
+                        <div>|</div>
+                        <button>UK</button>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <div class="infobox">
+            <div class="infobox__container">
+
+                <div class="line2">
+
+                </div>
+
+                <div class="center">
+                    <h1>Майстер клас пошивки</h1>
+
+                </div>
+
+                <div class="line1">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Контент -->
+        <div class="content">
+            <!-- Левая колонка -->
+            <aside class="PRM">
+
+                <h2>Кіберпорт</h2>
+                <ul>
+                    <li>Кіберкурси</li>
+                    <li>Кіберпорт 1</li>
+                    <li>Кіберпорт 2</li>
+                    <li>Чохли на оптику</li>
+                </ul>
+                <h2>Бронеодяг</h2>
+                <ul>
+                    <li>Бронеодяг 1</li>
+                    <li>Бронеодяг 2</li>
+                    <li>...</li>
+                </ul>
+            </aside>
+
+            <!-- Основной контент -->
+            <main class="main-content">
+                <section class="master-class">
+                    <h2>Лекала:</h2>
+                    <ul>
+                        <li>Розмір 1 - <a href="#">завантажити</a></li>
+                        <li>Розмір 2 - <a href="#">завантажити</a></li>
+                    </ul>
+                </section>
+
+                <section class="video">
+                    <h2>Майстер-клас</h2>
+                    <iframe width="330" height="315" src="https://www.youtube.com/embed/NY7yk_wn9v4?si=DHe8cFJ0hVpC0QHP"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </section>
+
+                <section class="examples">
+                    <h2>Приклади готового одягу:</h2>
+                    <div class="gallery">
+                        <img src="{% static 'Main_page/images/Cyber_t-shirt.jpg' %}" alt="Готовий одяг 1">
+                        <img src="{% static 'Main_page/images/Velcro_panties.jpg' %}" alt="Готовий одяг 2">
+                        <img src="{% static 'Main_page/images/Cyberpants.jpg' %}" alt="Готовий одяг 3">
+                    </div>
+                </section>
+
+                <section class="details1">
+                    <h2>Деталі чи варіативність:</h2>
+                    <p>Матеріали: Для пошиття адаптивних штанів можна закупити матеріали самостійно або отримати готовий
+                        комплект від швейної роти. Комплект включає чотири викроєні деталі штанів, кишеню, чорний шнурок
+                        для бокових зав'язок, резинку в пояс, липучки, колючу та м'яку клеєву стрічку для дублювання
+                        деяких ділянок, а також кольорові шнурки для поясу
+                        <br> <br>Пошиття: Після підготовки деталей, потрібно підгинаючи низ на величину припуску 2 см,
+                        пришити його на машинці. Важливо вибрати штани із закритими липучками та випрасувати їх перед
+                        пакуванням
+                        <br> <br>Додаткові деталі: Необхідно проклеїти місце під петлю для шнурка, роблячи мітки на
+                        деталях переду. Це включає відмітки на 4,5 см від верхнього зрізу та 2 см по середньому шву,
+                        після чого приклеюється невеличкий клаптик стрічки
+
+                    </p>
+                </section>
+
+                <section class="author">
+                    <h2>Автор лекал:</h2>
+                    <textarea id="authorTextarea" placeholder="@"></textarea>
+                </section>
+                <script>
+                    document.getElementById('authorTextarea').addEventListener('input', function () {
+                        // Проверка, начинается ли текст с символа '@'
+                        if (this.value && this.value[0] !== '@') {
+                            // Добавление символа '@' в начало текста, если его нет
+                            this.value = '@' + this.value;
+                        }
+                    });
+                </script>
+
+                <section class="comments">
+                    <h2>Коментарі і питання:</h2>
+                    <textarea placeholder="Залиште ваш коментар..."></textarea>
+                    <button>Надіслати</button>
+                </section>
+            </main>
+        </div>
+</body>
+
+</html>

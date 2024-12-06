@@ -24,4 +24,5 @@ from .settings import MEDIA_URL, MEDIA_ROOT
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', show_home, name='show_home'),
+	path('center/', center, name='center'),
 ] + static(MEDIA_URL, document_root = MEDIA_ROOT)

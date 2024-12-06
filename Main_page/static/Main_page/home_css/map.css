@@ -66,3 +66,13 @@
 	border-radius: 8px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 901px) {
+	.mapbox {
+		flex-direction: column;
+	}
+	.mapbox .left {
+		min-width: 0;
+		width: 100%;
+	}
+}
