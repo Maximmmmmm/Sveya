@@ -47,6 +47,35 @@
   max-width: 100%;
 }
 
+.infobox__container1 {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 20px; 
+  max-width: 1100px; 
+  margin: 0 auto; 
+  padding: 40px 15px; 
+  text-align: center; 
+}
+
+/* Стили для h1 */
+.infobox__container1 h1 {
+  font-size: 2.5rem; 
+  color: #2e2e35; 
+  font-family: 'intro', sans-serif; 
+  margin: 0; /* Убираем лишние отступы */
+}
+
+/* Стили для h2 */
+.infobox__container1 h2 {
+  font-size: 1.25rem; /* Размер шрифта для подзаголовка */
+  color: #2e2e35; 
+  font-family: 'anonymousprobold', sans-serif; 
+  line-height: 1.5; /* Увеличиваем межстрочный интервал для читаемости */
+  margin: 0; /* Убираем лишние отступы */
+}
+
 @media (max-width: 900px) {
   .infobox__container {
     flex-direction: column-reverse;

@@ -33,6 +33,7 @@
 }
 
 .card__top1 {
+  
   background: #E8DCD0;
   color: #2e2e35;
   padding: 20px;
@@ -63,7 +64,7 @@
 
 .card__top1 .iconshveya img {
   width: auto; 
-  height: auto; 
+  max-height: 400px; 
   object-fit: contain; 
 }
 
