@@ -10,7 +10,7 @@
 
 .conboxcontainer .conbox {
   height: 100%;
-  width: 1100px;
+  max-width: 1100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,6 @@
   background-color: #ebddd0;
   height: 100%;
   width: 49.8%;
-  min-width: 356px;
   display: flex; /* Flexbox для центрирования текста */
   justify-content: center; /* Горизонтальное центрирование */
   align-items: center; /* Вертикальное центрирование */

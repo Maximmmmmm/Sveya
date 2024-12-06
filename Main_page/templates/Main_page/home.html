@@ -27,14 +27,14 @@
 				<button class="icon-menu"><span></span></button>
 				<div class="right _menu">
 					<nav class="menu">
-						<a>Новини</a>
+						<a href="">Новини</a>
 						<a href="{% url 'show_home' %}" class="{% if request.path == '/' %}active{% endif %}">Навчальний
 							центр</a>
-						<a>Донат</a>
+						<a href="">Донат</a>
 					</nav>
 					<div class="menulang">
 						<button>EN</button>
-						<div>|</div>
+						<div class="_line"></div>
 						<button>UK</button>
 					</div>
 				</div>
@@ -50,7 +50,7 @@
 				</div>
 				<div class="right">
 					<h1>Швейна рота</h1>
-					<h2>Волонтерський проєкт, який займається пошиттям
+					<h2>Це волонтерський проєкт, який займається пошиттям
 						адаптивного одягу для поранених
 						захисників, захисниць України, а також цивільних,
 						які постраждали внаслідок російської агресії. Наші
@@ -62,47 +62,24 @@
 			</div>
 
 		</div>
-
+		<div class="order">
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLScwlcFX3jqmOrJ3oXMrcNJJS3-LgfYy5fjMlXSlSmpU6HaLaw/viewform" class="order__link">Замовити адаптивний одяг</a>
+		</div>
 		<div class="cardbox">
 			<div class="cardbox__container">
-				<!-- Карточка 1 -->
+				{% for card in cards %}
 				<div class="card">
 					<div class="card__top1">
 						<div class="iconshveya">
-							<img src="{% static 'Main_page/icons_cards/delta.png' %}" alt="iconshveya">
+							<img src="{{ card.img.url }}" alt="iconshveya">
 						</div>
-						<h1>За увесь час</h1>
+						<h1>{{ card.title }}</h1>
 					</div>
 					<div class="card__bottom">
-						<p>3760000000 грн</p>
+						<p>{{ card.value }}</p>
 					</div>
 				</div>
-				
-				<!-- Карточка 2 -->
-				<div class="card">
-					<div class="card__top">
-						<div class="iconshveya">
-							<img src="{% static 'Main_page/icons_cards/coin.png' %}" alt="iconshveya">
-						</div>
-						<h1>Найбільша пожертва</h1>
-					</div>
-					<div class="card__bottom">
-						<p>20000 грн</p>
-					</div>
-				</div>
-				
-				<!-- Карточка 3 -->
-				<div class="card">
-					<div class="card__top">
-						<div class="iconshveya">
-							<img src="{% static 'Main_page/icons_cards/money.png' %}" alt="iconshveya">
-						</div>
-						<h1>Середня пожертва</h1>
-					</div>
-					<div class="card__bottom">
-						<p>100 грн</p>
-					</div>
-				</div>
+				{% endfor %}
 			</div> 
 		</div> 
 

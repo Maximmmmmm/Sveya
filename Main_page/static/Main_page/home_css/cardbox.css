@@ -1,4 +1,3 @@
-
 /* Контейнер для карточек */
 .cardbox {
   background: #2e2e35;
@@ -11,21 +10,20 @@
 
 .cardbox__container {
   display: flex;
-  flex-wrap: wrap; 
-  gap: 20px; 
+  flex-wrap: wrap;
+  gap: 20px;
   max-width: 1100px;
   width: 100%;
-  
+  padding: 0px 15px;
 }
 
 /* Стили для карточек */
 /* Карточка */
 .card {
   background: #E8DCD0;
-  flex: 1 1 calc(33.333% - 20px);
-  max-width: auto;
+  flex: 1 1 30%;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 15px #e8dcd04e;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -33,55 +31,56 @@
 }
 
 .card__top1 {
-  
+
   background: #E8DCD0;
   color: #2e2e35;
   padding: 20px;
-  font-size: 1.7rem;
-  display: flex; 
-  flex-direction: row; 
-  align-items: center; 
-  gap: 30px; 
+  font-size: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
   font-weight: bold;
 }
+
 /* Верхняя часть карточки */
 .card__top {
   background: #E8DCD0;
   color: #2e2e35;
   padding: 20px;
-  display: flex; 
-  flex-direction: row; 
-  align-items: center; 
-  gap: 10px; 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
 /* Иконка в блоке .iconshveya */
 .card__top .iconshveya img {
-  width: auto; 
-  height: auto; 
-  object-fit: contain; 
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .card__top1 .iconshveya img {
-  width: auto; 
-  max-height: 400px; 
-  object-fit: contain; 
+  width: auto;
+  max-width: 75px;
+  object-fit: contain;
 }
 
 .card__top1 h1 {
-  font-family: 'anonymousprobold', sans-serif; 
-  font-size: 1.8rem;
+  font-family: 'anonymousprobold', sans-serif;
+  font-size: 22px;
   font-weight: bold;
-  text-align: center; 
+  text-align: center;
   font-weight: bold;
 }
 
 /* Заголовок */
 .card__top h1 {
-  font-family: 'anonymousprobold', sans-serif; 
-  font-size: 1.8rem;
+  font-family: 'anonymousprobold', sans-serif;
+  font-size: 26px;
   font-weight: bold;
-  text-align: center; 
+  text-align: center;
   font-weight: bold;
 }
 
@@ -89,7 +88,7 @@
 .card__bottom {
   font-family: 'intro', sans-serif;
   padding: 15px;
-  font-size: 3.2vh;
+  font-size: 24px;
   color: #2e2e35;
   text-align: center;
 }
@@ -103,7 +102,6 @@
 
   .card {
     flex: 1 1 100%;
-    max-width: 300px;
+    width: 100%;
   }
 }
-

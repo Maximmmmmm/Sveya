@@ -86,8 +86,13 @@ h6 {
 }
 
 .wrapper {
+	overflow-x: hidden;
 	height: auto;
 	background-color: #E8DCD0;
+}
+
+.menu-active {
+	overflow: hidden;
 }
 
 

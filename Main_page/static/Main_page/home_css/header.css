@@ -1,6 +1,5 @@
 .header {
-	position: absolute;
-	overflow: hidden;
+	position: relative;
 	background: #2e2e35;
 	height: 100px; 
 	width: 100%; 
@@ -36,6 +35,8 @@
 }
 
 .logo_shveya {
+	position: relative;
+	z-index: 4;
 	max-width: 196px;
 }
 
@@ -49,20 +50,36 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 8px;
+	gap: 14px;
 	margin: 0px 0px 0px 30px;
 }
 
-.menulang .div {
-	color: #E8DCD0;
+.menulang {
+	position: relative;
+}
+
+.menulang button {
+	transition: all 0.3s ease 0s;
+}
+
+.menulang button:hover {
+	color: #e5a462;
+}
+
+._line {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+	top: 0;
+	height: 100%;
+	width: 2px;
+	background-color: #E8DCD0;
 }
 
 .menu a, button {
-	position: relative;
 	font-size: 24px; 
 	font-family: 'intro', sans-serif; 
 	color: #E8DCD0;
-	position: relative;  
 	text-decoration: none;
 	display: flex;
 	flex-direction: column; 
@@ -73,7 +90,11 @@
 	user-select: none;
 }
 
-.menu a::after {
+.menu a:hover {
+	color: #e5a462;
+}
+
+/* .menu a::after {
 	content: '';
 	position: absolute;
 	bottom: 13px;  
@@ -85,23 +106,16 @@
 	border-radius: 50%;  
 	opacity: 0;  
 	transition: opacity 0.3s ease;  
-}
+} */
 
 .menu a.active::after {
 	opacity: 1;  
 }
 
-.menu a:hover {
-	color: #552bf0; 
-}
-
-.menu a.active:hover {
-	color: #E8DCD0; 
-}
-
 .icon-menu {
 	display: none;
 	position: relative;
+	z-index: 5;
 	height: 30px;
 }
 
@@ -120,6 +134,7 @@
 	height: 4px;
 	background-color: #E8DCD0;
 	left: 0;
+	transition: all 0.3s ease 0s;
 }
 
 .icon-menu::after {
@@ -130,6 +145,19 @@
 	top: 0;
 }
 
+.btn-active span {
+	opacity: 0;
+}
+
+.btn-active::after {
+	top: 50%;
+	transform: translate(0, -50%) rotate(-45deg);
+}
+
+.btn-active::before {
+	top: 50%;
+	transform: translate(0, -50%) rotate(45deg);
+}
 
 @media (max-width: 992px) {
 	.menu a, button {
@@ -138,6 +166,7 @@
 	.logo_shveya {
 		max-width: 146px;
 	}
+	
 }
 
 
@@ -146,4 +175,30 @@
 	.icon-menu {
 		display: block;
 	}
+	.right .menu {
+		flex-direction: column;
+	}
+	.menu a, button {
+		font-size: 22px;
+	}
+	._menu {
+		position: absolute;
+		top: 0;
+		left: 100%;
+		height: 100vh;
+		width: 100vw;
+		background-color: #2e2e35;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+		transition: all 0.3s ease 0s;
+	}
+	.right .menulang  {
+		margin: 0;
+	}
+}
+
+.active {
+	left: 0;
 }
