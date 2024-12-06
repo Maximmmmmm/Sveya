@@ -1,71 +1,108 @@
+
+/* Контейнер для карточек */
 .cardbox {
   background: #2e2e35;
-  height: 18%; 
-  width: 100%; 
-  position: relative;
-  z-index: 0;
-  display: flex; 
-  justify-content: center; /* Горизонтальное центрирование */
-  align-items: center; /* Вертикальное центрирование */
-  
-}
-
-.cardbox .card {
-  height: 70%; 
-  width: 50%; 
-  background-color: #E8DCD0;
-  margin: 2%; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-  font-weight: bold;
-  color: #2e2e35;
   display: flex;
-  flex-direction: column; /* Располагает элементы в столбец */
+  align-items: center;
+  justify-content: center;
+  padding: 40px 15px;
+
 }
 
-.card .top {
-  height: 50%;
+.cardbox__container {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px; 
+  max-width: 1100px;
   width: 100%;
-  border-radius: 10px;
+  
+}
+
+/* Стили для карточек */
+/* Карточка */
+.card {
+  background: #E8DCD0;
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: row; /* Переключаем на столбец */
-  background-color: #E8DCD0;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.top .icon_card {
-  margin-top: 6%;
-  margin-left: 6%;
-}
-
-.top h1 {
-  
-  font-size: 2.2vw; /* Относительный размер шрифта */
-  color: #2e2e35; 
-  margin-top: 10%;
-  margin-left: 6%;
-  font-family: 'anonymousprobold', sans-serif; 
-
-}
-
-
-
-.card .bot {
-  height: 50%; 
-  position: relative; 
-}
-
-.bot h1 {
-  
-  font-size: 3vw; /* Относительный размер шрифта */
-  color: #2e2e35; 
-  font-family: 'intro', sans-serif; 
+.card__top1 {
+  background: #E8DCD0;
+  color: #2e2e35;
+  padding: 20px;
+  font-size: 1.7rem;
   display: flex; 
-  padding-top: 4%;
-  justify-content: center; /* Горизонтальное центрирование */
-  align-items: center; /* Вертикальное центрирование */
+  flex-direction: row; 
+  align-items: center; 
+  gap: 30px; 
+  font-weight: bold;
+}
+/* Верхняя часть карточки */
+.card__top {
+  background: #E8DCD0;
+  color: #2e2e35;
+  padding: 20px;
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  gap: 10px; 
 }
 
+/* Иконка в блоке .iconshveya */
+.card__top .iconshveya img {
+  width: auto; 
+  height: auto; 
+  object-fit: contain; 
+}
 
+.card__top1 .iconshveya img {
+  width: auto; 
+  height: auto; 
+  object-fit: contain; 
+}
 
+.card__top1 h1 {
+  font-family: 'anonymousprobold', sans-serif; 
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center; 
+  font-weight: bold;
+}
 
+/* Заголовок */
+.card__top h1 {
+  font-family: 'anonymousprobold', sans-serif; 
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center; 
+  font-weight: bold;
+}
+
+/* Нижняя часть карточки */
+.card__bottom {
+  font-family: 'intro', sans-serif;
+  padding: 15px;
+  font-size: 3.2vh;
+  color: #2e2e35;
+  text-align: center;
+}
+
+/* Адаптивный стиль */
+@media (max-width: 901px) {
+  .cardbox__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    max-width: 300px;
+  }
+}
 

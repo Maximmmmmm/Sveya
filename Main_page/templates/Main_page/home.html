@@ -1,5 +1,4 @@
 {% load static %}
-<!-- static loading -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,55 +64,104 @@
 		</div>
 
 		<div class="cardbox">
-			<div class="card">
-				<div class="top">
-					<div class="icon_card"><img src="{% static 'Main_page/icons_cards/coin.png' %}" alt="coin"></div>
-					<h1>За увесь час</h1>
+			<div class="cardbox__container">
+				<!-- Карточка 1 -->
+				<div class="card">
+					<div class="card__top1">
+						<div class="iconshveya">
+							<img src="{% static 'Main_page/icons_cards/delta.png' %}" alt="iconshveya">
+						</div>
+						<h1>За увесь час</h1>
+					</div>
+					<div class="card__bottom">
+						<p>3760000000 грн</p>
+					</div>
 				</div>
-				<div class="bot">
-					<h1>36723213213 грн</h1>
+				
+				<!-- Карточка 2 -->
+				<div class="card">
+					<div class="card__top">
+						<div class="iconshveya">
+							<img src="{% static 'Main_page/icons_cards/coin.png' %}" alt="iconshveya">
+						</div>
+						<h1>Найбільша пожертва</h1>
+					</div>
+					<div class="card__bottom">
+						<p>20000 грн</p>
+					</div>
 				</div>
-			</div>
-			<div class="card">
-				<div class="top">
-					<div class="icon_card"><img src="{% static 'Main_page/icons_cards/money.png' %}" alt="coin"></div>
-					<h1>Найбільший донат</h1>
+				
+				<!-- Карточка 3 -->
+				<div class="card">
+					<div class="card__top">
+						<div class="iconshveya">
+							<img src="{% static 'Main_page/icons_cards/money.png' %}" alt="iconshveya">
+						</div>
+						<h1>Середня пожертва</h1>
+					</div>
+					<div class="card__bottom">
+						<p>100 грн</p>
+					</div>
 				</div>
-				<div class="bot">
-					<h1>20000 грн</h1>
-				</div>
-			</div>
-			<div class="card">
-				<div class="top">
-					<div class="icon_card"><img src="{% static 'Main_page/icons_cards/delta.png' %}" alt="coin"></div>
-					<h1>Середня пожертва</h1>
-				</div>
-				<div class="bot">
-					<h1>2000 грн</h1>
-				</div>
+			</div> 
+		</div> 
+
+		<div class="conboxcontainer">
+			<div class="conbox">
+				<a href="https://www.google.com" class="left">
+					<h1>Матеріали для пошиття</h1>
+				</a>		
+				<div class="column"></div>
+				<a href="https://www.google.com" class="right">
+					<h1>Інструкції для пошиття</h1>
+				</a>
 			</div>
 		</div>
-
-
-
-		<div class="conbox">
-			<div class="left">
-
-			</div>
-			<div class="column"></div>
-			<div class="right">
-
-
-			</div>
-		</div>
-
-
-
-
+		
+		<div class="cardbox">
+			<div class="cardbox__container">
+				<!-- Карточка 1 -->
+				<div class="card">
+					<div class="card__top1">
+						<div class="iconshveya">
+							<img src="{% static 'Main_page/icons_cards/delta.png' %}" alt="iconshveya">
+						</div>
+						<h1>За увесь час</h1>
+					</div>
+					<div class="card__bottom">
+						<p>3760000000 грн</p>
+					</div>
+				</div>
+				
+				<!-- Карточка 2 -->
+				<div class="card">
+					<div class="card__top">
+						<div class="iconshveya">
+							<img src="{% static 'Main_page/icons_cards/coin.png' %}" alt="iconshveya">
+						</div>
+						<h1>Найбільша пожертва</h1>
+					</div>
+					<div class="card__bottom">
+						<p>20000 грн</p>
+					</div>
+				</div>
+				
+				<!-- Карточка 3 -->
+				<div class="card">
+					<div class="card__top">
+						<div class="iconshveya">
+							<img src="{% static 'Main_page/icons_cards/money.png' %}" alt="iconshveya">
+						</div>
+						<h1>Середня пожертва</h1>
+					</div>
+					<div class="card__bottom">
+						<p>100 грн</p>
+					</div>
+				</div>
+			</div> 
+		</div> 
+		
 	</div>
-
-
-
 </body>
 
 </html>

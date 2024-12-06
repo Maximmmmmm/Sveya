@@ -86,7 +86,7 @@ h6 {
 }
 
 .wrapper {
-	height: 100%;
+	height: auto;
 	background-color: #E8DCD0;
 }
 

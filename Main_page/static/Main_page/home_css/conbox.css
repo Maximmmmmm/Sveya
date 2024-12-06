@@ -1,22 +1,38 @@
-.conbox {
-  background: #E8DCD0;
-  height: 36%; 
-  width: 100%; 
-  position: relative;
-  z-index: 0;
+.conboxcontainer {
+  height: 500px;
+  background: #ebddd0;
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
-  justify-content: center; /* Горизонтальное центрирование */
-  align-items: center; /* Вертикальное центрирование */
+  justify-content: center;
+  align-items: center;
 }
 
-.conbox .left {
-  background-color: #E8DCD0;
-  height: 100%; 
-  width: 49.3%; 
-  padding-left: 14%;
-  padding-top: 3%;
+.conboxcontainer .conbox {
+  height: 100%;
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conbox .left,
+.conbox .right {
+  background-color: #ebddd0;
+  height: 100%;
+  width: 49.8%;
+  min-width: 356px;
+  display: flex; /* Flexbox для центрирования текста */
   justify-content: center; /* Горизонтальное центрирование */
   align-items: center; /* Вертикальное центрирование */
+  position: relative; /* Для управления содержимым */
+  color: white; /* Цвет текста */
+  text-align: center; /* Выравнивание текста */
+  transition: background 0.3s ease; /* Анимация для плавности */
+}
+
+.conbox .right {
+  background-color: #ebddd0;
 }
 
 .conbox .column {
@@ -26,11 +42,25 @@
   border-radius: 10px;
 }
 
-.conbox .right {
-  height: 100%; 
-  width: 49.3%;
-  display: flex; 
-  flex-direction: column; /* Располагает элементы в столбец */
-  justify-content: center; /* Горизонтальное центрирование */
-  align-items: center; /* Вертикальное центрирование */
+/* Эффект при наведении на .left */
+.conbox .left:hover {
+  background: url('/static/Main_page/images/mat.png') center center no-repeat;
+  background-size: cover;
+}
+
+.conbox .right:hover {
+  background: url('/static/Main_page/images/guide.png') center center no-repeat;
+  background-size: cover;
+}
+
+/* Стили для заголовков */
+
+.conbox .left h1 {
+  font-size: 28px; /* Относительный размер шрифта */
+  color: #2e2e35; 
+  font-family: 'intro', sans-serif; 
+  text-align: center; /* Дополнительное центрирование текста */
+  font-size: 2rem; /* Размер шрифта */
+  margin: 0; /* Убираем отступы */
+  z-index: 1; /* Убедитесь, что текст выше фона */
 }
