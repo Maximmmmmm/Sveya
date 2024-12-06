@@ -14,15 +14,28 @@
     <link rel="stylesheet" href="{% static 'Main_page/home_css/cardbox.css' %}">
     <link rel="stylesheet" href="{% static 'Main_page/home_css/conbox.css' %}">
     <link rel="stylesheet" href="{% static 'Main_page/home_css/basement.css' %}">
+    <link rel="stylesheet" href="{% static 'Main_page/home_css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'Main_page/info_css/menu.css' %}">
 
     <!-- Подключение JS -->
     <script defer src="{% static 'Main_page/home_js/menu.js' %}"></script>
+    <script defer src="{% static 'Main_page/info_js/menu.js' %}"></script>
 </head>
 
 <body>
     <!-- Верхний блок -->
     <div class="wrapper">
 
+        <button id="menuButton" class="menu-button">
+
+        </button>
+
+        <!-- Выпадающее меню -->
+        <div id="menu" class="dropdown-menu">
+            <span id="closeButton" class="close-menu">&times;</span>
+            <textarea id="messageText" class="text-box" placeholder="Введіть повідомлення..."></textarea>
+            <button id="sendButton" class="send-button">Відправити</button>
+        </div>
         <header class="header">
             <div class="header__container">
                 <div class="left">
@@ -33,8 +46,8 @@
                 <button class="icon-menu"><span></span></button>
                 <div class="right _menu">
                     <nav class="menu">
-                        <a href="{% url 'center' %}" class="{% if request.path == '/' %}active{% endif %}">Навчальний
-                            центр</a>
+                        <a href="{% url 'show_home' %}" class="{% if request.path == '/' %}active{% endif %}">Головна
+                            сторінка</a>
                     </nav>
                     <div class="menulang">
                         <button>EN</button>
@@ -71,35 +84,30 @@
             <!-- Левая колонка -->
             <aside class="PRM">
 
-                <h2>Кіберпорт</h2>
+                <h2>Кіберодяг</h2>
                 <ul>
-                    <li>Кіберкурси</li>
-                    <li>Кіберпорт 1</li>
-                    <li>Кіберпорт 2</li>
-                    <li>Чохли на оптику</li>
+                    <li>Кіберштани</li>
                 </ul>
                 <h2>Бронеодяг</h2>
                 <ul>
-                    <li>Бронеодяг 1</li>
-                    <li>Бронеодяг 2</li>
-                    <li>...</li>
+                    <li>Бронефутболки </li>
                 </ul>
             </aside>
 
             <!-- Основной контент -->
             <main class="main-content">
                 <section class="master-class">
+                    <h1 style="margin-bottom: 20px; font-size: 26px; text-align: center;">{{ primer.title }}</h1>
                     <h2>Лекала:</h2>
                     <ul>
-                        <li>Розмір 1 - <a href="#">завантажити</a></li>
-                        <li>Розмір 2 - <a href="#">завантажити</a></li>
+                        <li>Розмір 1 - <a href="{{ primer.file.url }}">завантажити</a></li>
                     </ul>
                 </section>
 
                 <section class="video">
                     <h2>Майстер-клас</h2>
-                    <iframe width="330" height="315" src="https://www.youtube.com/embed/NY7yk_wn9v4?si=DHe8cFJ0hVpC0QHP"
-                        title="YouTube video player" frameborder="0"
+                    <iframe width="330" height="315" src="{{ primer.video_url }}" title="YouTube video player"
+                        frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -108,26 +116,13 @@
                 <section class="examples">
                     <h2>Приклади готового одягу:</h2>
                     <div class="gallery">
-                        <img src="{% static 'Main_page/images/Cyber_t-shirt.jpg' %}" alt="Готовий одяг 1">
-                        <img src="{% static 'Main_page/images/Velcro_panties.jpg' %}" alt="Готовий одяг 2">
-                        <img src="{% static 'Main_page/images/Cyberpants.jpg' %}" alt="Готовий одяг 3">
+                        <img src="{{ primer.example.url }}" alt="Готовий одяг 1">
                     </div>
                 </section>
 
                 <section class="details1">
-                    <h2>Деталі чи варіативність:</h2>
-                    <p>Матеріали: Для пошиття адаптивних штанів можна закупити матеріали самостійно або отримати готовий
-                        комплект від швейної роти. Комплект включає чотири викроєні деталі штанів, кишеню, чорний шнурок
-                        для бокових зав'язок, резинку в пояс, липучки, колючу та м'яку клеєву стрічку для дублювання
-                        деяких ділянок, а також кольорові шнурки для поясу
-                        <br> <br>Пошиття: Після підготовки деталей, потрібно підгинаючи низ на величину припуску 2 см,
-                        пришити його на машинці. Важливо вибрати штани із закритими липучками та випрасувати їх перед
-                        пакуванням
-                        <br> <br>Додаткові деталі: Необхідно проклеїти місце під петлю для шнурка, роблячи мітки на
-                        деталях переду. Це включає відмітки на 4,5 см від верхнього зрізу та 2 см по середньому шву,
-                        після чого приклеюється невеличкий клаптик стрічки
-
-                    </p>
+                    <p>{{ primer.details }}</p>
+                    <p>{{ primer.summary }}</p>
                 </section>
 
                 <section class="author">
